@@ -1,0 +1,22 @@
+{
+  "name": "keymanager-subgraph",
+  "license": "UNLICENSED",
+  "scripts": {
+    "codegen": "graph codegen",
+    "build": "graph build",
+    "predeploy": "node -r dotenv/config",
+    "deploy": "graph auth https://api.thegraph.com/deploy/ $GRAPH_ACCESS_TOKEN && graph deploy --node https://api.thegraph.com/deploy/ raj-raut8502/KeyManager",
+    "create-local": "graph create --node http://localhost:8020/ raj-raut8502/KeyManager",
+    "remove-local": "graph remove --node http://localhost:8020/ raj-raut8502/KeyManager",
+    "deploy-local": "graph deploy --node http://localhost:8020/ --ipfs http://localhost:5001 raj-raut8502/KeyManager",
+    "test": "graph test"
+  },
+  "dependencies": {
+    "@graphprotocol/graph-cli": "^0.71.0",
+    "@graphprotocol/graph-ts": "^0.35.1",
+    "dotenv": "^16.4.5"
+  },
+  "devDependencies": {
+    "matchstick-as": "^0.6.0"
+  }
+}

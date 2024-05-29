@@ -1,0 +1,32 @@
+specVersion: 1.0.0
+indexerHints:
+  prune: auto
+schema:
+  file: ./schema.graphql
+dataSources:
+  - kind: ethereum
+    name: KeyManager
+    network: fuji
+    source:
+      address: "0x1D16890Cd336C9Ae2025B323Bf20cC37B58E16cc"
+      abi: KeyManager
+      startBlock: 33320576
+    mapping:
+      kind: ethereum/events
+      apiVersion: 0.0.7
+      language: wasm/assemblyscript
+      entities:
+        - KeyAdded
+        - KeyDeleted
+        - KeyUpdated
+      abis:
+        - name: KeyManager
+          file: ./abis/KeyManager.json
+      eventHandlers:
+        - event: KeyAdded(uint256,string,indexed address)
+          handler: handleKeyAdded
+        - event: KeyDeleted(uint256,indexed address)
+          handler: handleKeyDeleted
+        - event: KeyUpdated(uint256,string,indexed address)
+          handler: handleKeyUpdated
+      file: ./src/key-manager.ts
