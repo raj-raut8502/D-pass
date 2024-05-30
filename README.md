@@ -33,8 +33,8 @@ This project is a secure, decentralized password management system utilizing blo
 
 ### Prerequisites
 
-- Node.js
-- Yarn
+- Node.js=18.20.1
+- Yarn=1.22.22
 - Hardhat
 - IPFS
 - The Graph
