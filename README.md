@@ -32,78 +32,81 @@ This project is a secure, decentralized password management system utilizing blo
 ## Installation and Setup
 
 ### Prerequisites
-
+```
 - Node.js=18.20.1
 - Yarn=1.22.22
 - Hardhat
 - IPFS
 - The Graph
+```
 
 ### Environment Variables
 
 #### .env
-
+```bash
 PRIV_KEY=
 FUJI_RPC_URL=
+```
 #### Client/.env
-
+```bash
 NEXT_PUBLIC_PINATA_API_KEY=
 NEXT_PUBLIC_PINATA_API_SECRET_KEY=
 NEXT_PUBLIC_API_URL=
 NEXT_PUBLIC_CONTRACT_ADDRESS=
+```
 ### Deploying Smart Contract
 
 1. Install dependencies:
-  
+  ```bash
    yarn install
-   
+   ```
 2. Compile the smart contracts:
-  
+  ```bash
    yarn hardhat compile
-   
+   ```
 3. Deploy the contracts to the Fuji test network:
-  
+  ```bash
    yarn hardhat deploy --network fuji
-   
-4. Copy the deployed contract address and paste it in the Client/.env file as NEXT_PUBLIC_CONTRACT_ADDRESS.
+   ```
+4. Copy the deployed contract address and paste it in the ```Client/.env``` file as ```NEXT_PUBLIC_CONTRACT_ADDRESS```.
 
 ### Deploying Subgraph
 
 Note: Update the subgraph.yaml file with the deployed contract address. Update the deploy script with your own subgraph name.
 
 1. Navigate to the indexer directory:
-  
+  ```bash
    cd indexer
-   
+   ```
 2. Install dependencies:
-  
+  ```bash
    yarn install
-   
+   ```
 3. Generate code:
-  
+  ```bash
    yarn codegen
-   
+   ```
 4. Deploy the subgraph:
-  
+  ```bash
    yarn deploy
-   
-5. Copy the subgraph URL and paste it in the Client/.env file as NEXT_PUBLIC_API_URL.
+   ```
+5. Copy the subgraph URL and paste it in the ```Client/.env``` file as ```NEXT_PUBLIC_API_URL```.
 
 ### Running the Client
 
 1. Fill in the required values in the Client/.env file.
 2. Navigate to the client directory:
-  
+  ```bash
    cd client
-   
+   ```
 3. Install dependencies:
-  
+  ```bash
    yarn install
-   
+   ```
 4. Start the development server:
-  
+  ```bash
    yarn dev
-   
+   ```
 ## Additional Information
 
 - Lit Protocol: For encryption and access control.
